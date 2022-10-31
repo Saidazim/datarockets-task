@@ -4,19 +4,17 @@
   </h2>
 
   <div class="calc">
-    <div class="calc__form">
+    <div class="calc__form" [formGroup]="tipForm">
       <div class="calc__form__label">Bill</div>
-      <input class="calc__form__input" type="text">
+      <input class="calc__form__input" type="text" placeholder="0" formControlName="bill">
 
       <div class="calc__form__label">Select Tip %</div>
-
       <div class="calc__form__tip-buttons">
 
       </div>
 
-
       <div class="calc__form__label">Number of People</div>
-      <input class="calc__form__input" type="text">
+      <input class="calc__form__input" type="text" placeholder="0" formControlName="numOfPeople">
     </div>
 
     <div class="calc__result">
@@ -31,14 +29,14 @@
         </div>
 
         <div class="calc__result__block__number">
-
+          {{tipAmount}}
         </div>
       </div>
 
       <div class="calc__result__block">
         <div class="calc__result__block__label">
           <div class="calc__result__block__label__text">
-            Tip amount
+            Total
           </div>
           <div class="calc__result__block__label__text">
             / person
@@ -46,11 +44,11 @@
         </div>
 
         <div class="calc__result__block__number">
-
+          {{total}}
         </div>
       </div>
 
-      <div class="calc__result__reset-btn">RESET</div>
+      <div class="calc__result__reset-btn" (click)="tipForm.reset()">RESET</div>
     </div>
   </div>
 </div>
