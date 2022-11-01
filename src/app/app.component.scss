@@ -7,13 +7,11 @@
     align-items: center;
 
     .title {
-        text-align: center;
-        width: 70px;
-        word-break: break-all;
-        font-size: 16px;
-        letter-spacing: 5px;
-        color: $dark-grayish;
-        margin: 50px;
+        margin: 100px 0 50px 0;
+
+        img {
+            height: 40px;
+        }
     }
 
     .calc {
@@ -48,6 +46,17 @@
                     background-color: $very-light-grayish;
                     border: 1px solid $very-light-grayish;
                     border-radius: 4px;
+                    background-repeat: no-repeat;
+                    background-position: 10px 8px;
+                    background-size: 8px;
+
+                    &__dollar {
+                        background-image: url(../assets/svg/icon-dollar.svg);
+                    }
+
+                    &__person {
+                        background-image: url(../assets/svg/icon-person.svg);
+                    }
                     
                     &::placeholder {
                         color: $grayish;

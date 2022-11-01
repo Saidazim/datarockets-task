@@ -1,13 +1,14 @@
 <div class="container">
   <div class="title">
-    SPLITTER
+    <img src="assets/svg/logo.svg">
   </div>
 
   <div class="calc">
     <div class="calc__form" [formGroup]="tipForm">
       <div class="calc__form__field">
         <div class="calc__form__field__label">Bill</div>
-        <input class="calc__form__field__input" type="text" placeholder="0" formControlName="bill">
+        <input class="calc__form__field__input calc__form__field__input__dollar" type="text" placeholder="0"
+          formControlName="bill">
       </div>
 
 
@@ -27,7 +28,8 @@
 
       <div class="calc__form__field">
         <div class="calc__form__field__label">Number of People</div>
-        <input class="calc__form__field__input" type="text" placeholder="0" formControlName="numOfPeople">
+        <input class="calc__form__field__input calc__form__field__input__person" type="text" placeholder="0"
+          formControlName="numOfPeople">
       </div>
     </div>
 
