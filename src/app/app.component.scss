@@ -76,6 +76,11 @@
                         border-color: $primary;
                     }
 
+                    &:hover {
+                        outline: none !important;
+                        border-color: $primary;
+                    }
+
                     &::placeholder {
                         color: $grayish;
                     }
@@ -101,6 +106,12 @@
 
                         &:nth-child(3n) {
                             margin-right: unset;
+                        }
+
+                        &:hover {
+                            background-color: $primary;
+                            color: $very-dark;
+                            filter: brightness(120%);
                         }
 
                         &__custom {
@@ -161,6 +172,10 @@
 
                 &:disabled {
                     opacity: 0.2;
+                }
+
+                &:hover {
+                    filter: brightness(120%);
                 }
             }
         }
