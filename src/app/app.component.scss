@@ -57,6 +57,13 @@
                     &__person {
                         background-image: url(../assets/svg/icon-person.svg);
                     }
+
+                    &__custom {
+                        height: 32px;
+                        width: 64px;
+                        padding: 1px 10px 1px 1px;
+                        margin-top: 10px;
+                    }
                     
                     &::placeholder {
                         color: $grayish;
@@ -88,6 +95,11 @@
                         &__custom {
                             background-color: $very-light-grayish;
                             color: $dark-grayish;
+                        }
+
+                        &__active {
+                            background-color: $primary;
+                            color: $very-dark;
                         }
                     }
                 }

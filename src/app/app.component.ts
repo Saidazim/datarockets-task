@@ -9,12 +9,15 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   public tipForm = new FormGroup({
-    bill: new FormControl(0, { nonNullable: true, validators: Validators.required }),
-    tipPercentage: new FormControl(15, { nonNullable: true, validators: Validators.required }),
-    numOfPeople: new FormControl(0, { nonNullable: true, validators: Validators.required }),
+    bill: new FormControl<number | null>(null, { validators: Validators.required }),
+    tipPercentage: new FormControl<number | null>(null, { validators: Validators.required }),
+    numOfPeople: new FormControl<number | null>(null, { validators: Validators.required }),
   });
   public tipAmount: number = 0;
   public total: number = 0;
+  public percentages: number[] = [5, 10, 15, 25, 50];
+  public selectedIndex: number = -1;
+  public isCustom: boolean = false;
   private subscriptions: Subscription = new Subscription();
 
   ngOnInit(): void {
@@ -35,6 +38,18 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.tipAmount = ((bill * tipPercentage) / numOfPeople) / 100;
     this.total = (bill / numOfPeople) + this.tipAmount;
+  }
+
+  public selectPercentage(selectedIndex: number): void {
+    this.tipForm.patchValue({ tipPercentage: this.percentages[selectedIndex] });
+    this.selectedIndex = selectedIndex;
+    this.isCustom = false;
+  }
+
+  public onCustomClick(): void {
+    this.tipForm.controls.tipPercentage.reset();
+    this.selectedIndex = -1;
+    this.isCustom = true;
   }
 
   ngOnDestroy(): void {
