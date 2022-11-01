@@ -64,7 +64,17 @@
                         padding: 1px 10px 1px 1px;
                         margin-top: 10px;
                     }
+
+                    &.ng-invalid.ng-touched {
+                        outline: none !important;
+                        border-color: darkred;
+                    }
                     
+                    &:focus {
+                        outline: none !important;
+                        border-color: $primary;
+                    }
+
                     &::placeholder {
                         color: $grayish;
                     }
@@ -147,6 +157,10 @@
                 border: unset;
                 border-radius: 4px;
                 font-weight: 700;
+
+                &:disabled {
+                    opacity: 0.2;
+                }
             }
         }
     }

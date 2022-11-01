@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <button class="calc__result__reset-btn" (click)="tipForm.reset()">RESET</button>
+      <button [disabled]="tipForm.pristine" class="calc__result__reset-btn" (click)="tipForm.reset()">RESET</button>
     </div>
   </div>
 </div>
