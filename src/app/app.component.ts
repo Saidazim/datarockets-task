@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -9,9 +9,9 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   public tipForm = new FormGroup({
-    bill: new FormControl(),
-    tipPercentage: new FormControl(15),
-    numOfPeople: new FormControl(),
+    bill: new FormControl(0, { nonNullable: true, validators: Validators.required }),
+    tipPercentage: new FormControl(15, { nonNullable: true, validators: Validators.required }),
+    numOfPeople: new FormControl(0, { nonNullable: true, validators: Validators.required }),
   });
   public tipAmount: number = 0;
   public total: number = 0;
