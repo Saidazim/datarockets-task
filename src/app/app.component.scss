@@ -16,6 +16,7 @@
 
     .calc {
         display: flex;
+        flex-direction: row;
         background-color: white;
         padding: 24px;
         border-radius: 15px;
@@ -160,6 +161,21 @@
 
                 &:disabled {
                     opacity: 0.2;
+                }
+            }
+        }
+
+        @media (max-width: 650px) {
+            & {
+                flex-direction: column;
+            
+                &__form {
+                    margin-right: unset;
+                    margin-bottom: 30px;
+                }
+        
+                &__result {
+                    width: 204px;
                 }
             }
         }
