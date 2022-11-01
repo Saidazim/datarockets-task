@@ -1,35 +1,49 @@
 <div class="container">
-  <h2 class="title">
+  <div class="title">
     SPLITTER
-  </h2>
+  </div>
 
   <div class="calc">
     <div class="calc__form" [formGroup]="tipForm">
-      <div class="calc__form__label">Bill</div>
-      <input class="calc__form__input" type="text" placeholder="0" formControlName="bill">
-
-      <div class="calc__form__label">Select Tip %</div>
-      <div class="calc__form__tip-buttons">
-
+      <div class="calc__form__field">
+        <div class="calc__form__field__label">Bill</div>
+        <input class="calc__form__field__input" type="text" placeholder="0" formControlName="bill">
       </div>
 
-      <div class="calc__form__label">Number of People</div>
-      <input class="calc__form__input" type="text" placeholder="0" formControlName="numOfPeople">
+
+      <div class="calc__form__field">
+        <div class="calc__form__field__label">Select Tip %</div>
+        <div class="calc__form__field__tip-buttons">
+          <button class="calc__form__field__tip-buttons__btn">5%</button>
+          <button class="calc__form__field__tip-buttons__btn">10%</button>
+          <button class="calc__form__field__tip-buttons__btn">15%</button>
+          <button class="calc__form__field__tip-buttons__btn">25%</button>
+          <button class="calc__form__field__tip-buttons__btn">50%</button>
+          <button class="calc__form__field__tip-buttons__btn calc__form__field__tip-buttons__btn__custom">
+            Custom
+          </button>
+        </div>
+      </div>
+
+      <div class="calc__form__field">
+        <div class="calc__form__field__label">Number of People</div>
+        <input class="calc__form__field__input" type="text" placeholder="0" formControlName="numOfPeople">
+      </div>
     </div>
 
     <div class="calc__result">
       <div class="calc__result__block">
         <div class="calc__result__block__label">
           <div class="calc__result__block__label__text">
-            Tip amount
+            Tip Amount
           </div>
-          <div class="calc__result__block__label__text">
+          <div class="calc__result__block__label__hint">
             / person
           </div>
         </div>
 
         <div class="calc__result__block__number">
-          {{tipAmount}}
+          {{((tipAmount | number : '1.2-2') || 0) | currency}}
         </div>
       </div>
 
@@ -38,17 +52,17 @@
           <div class="calc__result__block__label__text">
             Total
           </div>
-          <div class="calc__result__block__label__text">
+          <div class="calc__result__block__label__hint">
             / person
           </div>
         </div>
 
         <div class="calc__result__block__number">
-          {{total}}
+          {{((total | number : '1.2-2') || 0) | currency}}
         </div>
       </div>
 
-      <div class="calc__result__reset-btn" (click)="tipForm.reset()">RESET</div>
+      <button class="calc__result__reset-btn" (click)="tipForm.reset()">RESET</button>
     </div>
   </div>
 </div>

@@ -1,0 +1,132 @@
+@import "../shared/variables";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .title {
+        text-align: center;
+        width: 70px;
+        word-break: break-all;
+        font-size: 16px;
+        letter-spacing: 5px;
+        color: $dark-grayish;
+        margin: 50px;
+    }
+
+    .calc {
+        display: flex;
+        background-color: white;
+        padding: 24px;
+        border-radius: 15px;
+
+        &__form {
+            margin-right: 30px;
+            
+            &__field {
+                margin-bottom: 30px;
+
+                &:last-child {
+                    margin-bottom: unset;
+                }
+
+                &__label {
+                    color: $dark-grayish;
+                    font-size: 12px;
+                }
+
+                &__input {
+                    text-align: right;
+                    padding: 1px 10px 1px 30px;
+                    height: 26px;
+                    width: 210px;
+                    font-size: 16px;
+                    font-family: 'Space Mono', monospace;
+                    color: $very-dark;
+                    background-color: $very-light-grayish;
+                    border: 1px solid $very-light-grayish;
+                    border-radius: 4px;
+                    
+                    &::placeholder {
+                        color: $grayish;
+                    }
+                }
+
+                &__tip-buttons {
+                    display: flex;
+                    width: 252px;
+                    flex-wrap: wrap;
+                    
+                    &__btn {
+                        height: 36px;
+                        border: unset;
+                        border-radius: 4px;
+                        font-weight: 700;
+                        width: 77px;
+                        margin: 10px 10px 0 0;
+                        background-color: $very-dark;
+                        color: white;
+                        font-family: 'Space Mono', monospace;
+                        font-size: 14px;
+                        cursor: pointer;
+
+                        &:nth-child(3n) {
+                            margin-right: unset;
+                        }
+
+                        &__custom {
+                            background-color: $very-light-grayish;
+                            color: $dark-grayish;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &__result {
+            background-color: $very-dark;
+            padding: 24px;
+            border-radius: 10px;
+
+            &__block {
+                display: flex;
+                align-items: center;
+                margin-bottom: 24px;
+
+                &__label {
+                    width: 100px;
+                    &__text {
+                        color: white;
+                        font-size: 12px;
+                    }
+
+                    &__hint {
+                        color: $dark-grayish;
+                        font-size: 12px;
+                    }
+                }
+
+                &__number {
+                    color: $primary;
+                    width: 150px;
+                    text-align: end;
+                    font-size: 32px;
+                }
+            }
+
+            &__reset-btn {
+                background-color: $primary;
+                color: $very-dark;
+                margin-top: 51px;
+                height: 36px;
+                width: 100%;
+                border: unset;
+                border-radius: 4px;
+                font-weight: 700;
+            }
+        }
+    }
+}

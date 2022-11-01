@@ -1,5 +1,7 @@
+@import "shared/variables";
+
 body {
-    background-color: hsl(185, 41%, 84%);
+    background-color: $light-grayish;
     font-size: 24px;
     font-family: 'Space Mono', monospace;
 }
