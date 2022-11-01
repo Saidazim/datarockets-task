@@ -52,6 +52,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.isCustom = true;
   }
 
+  public onReset(): void {
+    this.isCustom = false;
+    this.selectedIndex = -1;
+    this.tipAmount = 0;
+    this.total = 0;
+    this.tipForm.reset();
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe()
   }
