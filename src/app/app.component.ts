@@ -9,9 +9,9 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   public tipForm = new FormGroup({
-    bill: new FormControl<number | null>(null, { validators: Validators.required }),
-    tipPercentage: new FormControl<number | null>(null, { validators: Validators.required }),
-    numOfPeople: new FormControl<number | null>(null, { validators: Validators.required }),
+    bill: new FormControl<number | null>(null, { validators: [Validators.required, Validators.pattern("^[0-9]+([.][0-9]+)?$")] }),
+    tipPercentage: new FormControl<number | null>(null, { validators: [Validators.required, Validators.pattern("^[0-9]+([.][0-9]+)?$")] }),
+    numOfPeople: new FormControl<number | null>(null, { validators: [Validators.required, Validators.pattern("^[0-9]+([.][0-9]+)?$")] }),
   });
   public tipAmount: number = 0;
   public total: number = 0;
